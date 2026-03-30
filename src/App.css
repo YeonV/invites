@@ -1,0 +1,636 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: #0e0e1a;
+  color: #fff;
+  overflow-y: hidden;
+}
+.app {
+  min-height: calc(100dvh + 2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0e0e1a;
+  overflow-x: hidden;
+  max-width: 430px;
+  margin: 0 auto;
+  /* padding-top: 20rem; */
+}
+
+.no-scroll {
+  min-height: 100dvh;
+  overflow-y: hidden;
+}
+
+.logo {
+  width: min(90vw, 430px);
+  height: auto;
+}
+
+/* ── Invite logo: always fixed, animated via keyframes ────────────── */
+.invite-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 430px);
+  height: auto;
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.invite-logo--shrink {
+  animation: logo-to-bar 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.invite-logo--bar {
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: min(80vw, 350px);
+  opacity: 1;
+  z-index: 10;
+}
+
+@keyframes logo-to-bar {
+  from {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 430px);
+    opacity: 0.85;
+  }
+  to {
+    top: 20px;
+    transform: translate(-50%, 0);
+    width: min(80vw, 350px);
+    opacity: 1;
+  }
+}
+
+/* ── Password form ───────────────────────────────────────────────── */
+.pw-form {
+  display: flex;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 16rem;
+  z-index: 1;
+  position: relative;
+}
+
+.pw-input {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.pw-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.pw-btn {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 0;
+  background: rgba(255, 220, 0, 0.85);
+  color: #0e0e1a;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pw-btn:hover {
+  background: rgba(255, 220, 0, 1);
+}
+
+.pw-shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-12px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(6px); }
+}
+
+/* ── Invite card ─────────────────────────────────────────────────── */
+.invite-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.04) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  backdrop-filter: blur(16px);
+  margin-top: 2rem;
+  width: calc(100vw - 1.5rem);
+  box-shadow:
+    0 0 60px rgba(255, 255, 255, 0.03),
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.invite-card--enter {
+  animation: card-enter 0.6s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.invite-avatar {
+  margin-top: 2rem;
+  width: min(300px, 70vw);
+  height: min(300px, 70vw);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 0 40px rgba(255, 255, 255, 0.08),
+    0 0 80px rgba(255, 255, 255, 0.04);
+}
+
+.invite-name {
+  font-family: system-ui, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.invite-text {
+  font-family: system-ui, sans-serif;
+  font-size: 1.8rem;
+  color: rgba(255, 220, 0, 0.9);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(255, 220, 0, 0.25);
+}
+
+.bottom-spacer {
+  height: 10rem;
+  flex-shrink: 0;
+}
+
+.bottom-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  z-index: 20;
+  background: linear-gradient(to top, #0e0e1a 60%, transparent);
+  padding-top: 2rem;
+}
+
+.dock-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.dock-btn--intro {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.dock-btn--intro:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.dock-btn--join {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dock-btn--join:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.invite-error {
+  font-family: system-ui, sans-serif;
+  color: rgba(255, 100, 100, 0.8);
+  font-size: 1.2rem;
+}
+
+/* ── Briefing fullscreen dialog ──────────────────────────────────── */
+.briefing-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0e0e1a;
+  overflow-y: auto;
+  animation: briefing-in 0.4s ease both;
+}
+
+@keyframes briefing-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.briefing-scroll {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 1.5rem 6rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 220, 0, 0.3) transparent;
+}
+
+.briefing-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.briefing-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.briefing-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 220, 0, 0.3);
+  border-radius: 3px;
+}
+
+.briefing-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 220, 0, 0.5);
+}
+
+.briefing-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
+}
+
+.briefing-logo {
+  width: 100%;
+  height: 12vw;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.briefing-subtitle {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 220, 0, 0.8);
+  letter-spacing: 0.2em;
+  margin-top: 0.5rem;
+}
+
+.briefing-meta {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.briefing-tagline {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.briefing-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.briefing-section h2 {
+  font-family: system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.briefing-section p {
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 0.8rem;
+}
+
+.briefing-section ul,
+.briefing-section ol {
+  padding-left: 1.2rem;
+  margin: 0.8rem 0;
+}
+
+.briefing-section li {
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.6rem;
+}
+
+.briefing-section li strong {
+  color: #fff;
+}
+
+/* ── Stat row (1 Abend / 9 Spiele / 1 Gewinner) ─────────────────── */
+.stat-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+}
+
+.stat-num {
+  font-family: system-ui, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.2rem;
+}
+
+/* ── Section icon + heading in one row ────────────────────────────── */
+.section-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Info cards (Scoring) ────────────────────────────────────────── */
+.info-cards {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+}
+
+.info-card strong {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.info-card span {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Rule cards ──────────────────────────────────────────────────── */
+.rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.rule-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+}
+
+.rule-num {
+  font-family: system-ui, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: rgba(255, 220, 0, 0.7);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: center;
+}
+
+.rule-card div {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.rule-card strong {
+  color: #fff;
+}
+
+/* ── Timeline (Der Abend) ────────────────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.35rem;
+  top: 1rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #0e0e1a;
+}
+
+.timeline-dot--accent {
+  background: rgba(255, 220, 0, 0.7);
+}
+
+.timeline-item strong {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.timeline-item > span {
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.1rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.8rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.skill-card strong {
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.skill-card span:last-child {
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.3;
+}
+
+.briefing-section--highlight {
+  background: rgba(255, 220, 0, 0.04);
+  border: 1px solid rgba(255, 220, 0, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.briefing-accent {
+  color: rgba(255, 220, 0, 0.9) !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+}
+
+.briefing-section--final {
+  text-align: center;
+  border-bottom: none;
+  padding-top: 1rem;
+}
+
+.briefing-section--final p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.briefing-footer {
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+
+.briefing-close {
+  position: fixed;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(14, 14, 26, 0.95);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 101;
+  text-align: center;
+}

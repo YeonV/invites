@@ -1,0 +1,64 @@
+<svg
+  width="939"
+  height="741"
+  viewBox="0 0 939 741"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-213 -60)">
+    <polygon
+      points="233,781 324.5,781 845.5,80 754,80"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="324.5,781 416,781 937,80 845.5,80"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="233,80 324.5,80 504.36,322 458.61,383.56"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="324.5,80 416,80 550.11,260.44 504.36,322"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="711.39,477.44 838.15,648 1033.12,648 1082.56,714.5 796.075,714.5 665.64,539"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="665.64,539 796.075,714.5 1082.56,714.5 1132,781 754,781 619.89,600.56"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+  </g>
+</svg>

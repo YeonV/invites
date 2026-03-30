@@ -1,0 +1,6 @@
+# git-crypt: encrypt files containing real player names
+src/assets/avatars/** filter=git-crypt diff=git-crypt
+generate-cards.cjs filter=git-crypt diff=git-crypt
+generate-cards2.cjs filter=git-crypt diff=git-crypt
+generate-cards3.cjs filter=git-crypt diff=git-crypt
+generate-qrcodes.cjs filter=git-crypt diff=git-crypt

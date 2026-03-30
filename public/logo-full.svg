@@ -1,0 +1,171 @@
+<svg
+  width="2260"
+  height="730"
+  viewBox="0 0 2260 730"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-220 -70)">
+    <!-- X -->
+    <polygon
+      points="233,781 324.5,781 845.5,80 754,80"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="324.5,781 416,781 937,80 845.5,80"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="233,80 324.5,80 504.36,322 458.61,383.56"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="324.5,80 416,80 550.11,260.44 504.36,322"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="711.39,477.44 838.15,648 1033.12,648 1082.56,714.5 796.075,714.5 665.64,539"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+    <polygon
+      points="665.64,539 796.075,714.5 1082.56,714.5 1132,781 754,781 619.89,600.56"
+      fill="#FFFFFF"
+      stroke="#FFFFFF"
+      stroke-width="1"
+      stroke-linejoin="round"
+      vector-effect="non-scaling-stroke"
+      paint-order="stroke fill"
+    />
+
+    <!-- EON -->
+    <g transform="translate(28 0)">
+      <!-- E -->
+      <polygon
+        points="1050,80 1310,80 1241.62,172 981.62,172"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="981.62,172 1101.62,172 1006.49,300 886.49,300"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="886.49,300 1166.49,300 1098.11,392 818.11,392"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="818.11,392 958.11,392 1068.11,540 928.11,540"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="899.84,502 1249.84,502 1321.19,598 971.19,598"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+
+      <!-- O -->
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M1459.6 80
+           H1700.4
+           L1886.24 339
+           L1700.4 598
+           H1459.6
+           L1273.76 339
+           Z
+
+           M1511.04 155
+           H1648.96
+           L1782.1 339
+           L1655.36 514
+           H1504.64
+           L1377.9 339
+           Z"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+
+      <!-- N -->
+      <polygon
+        points="1933,80 2043,80 2043,598 1933,598"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="1933,80 2043,80 2428,598 2318,598"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+      <polygon
+        points="2318,80 2428,80 2428,598 2318,598"
+        fill="#FFFFFF"
+        stroke="#FFFFFF"
+        stroke-width="1"
+        stroke-linejoin="round"
+        vector-effect="non-scaling-stroke"
+        paint-order="stroke fill"
+      />
+    </g>
+  </g>
+</svg>
