@@ -57,7 +57,7 @@ const encoders = [
   // 12. Hex-encoded AES-256-GCM (with auth tag appended)
   (name) => {
     const key = crypto.scryptSync('xeon2026', 'pepper', 32);
-    const iv = crypto.randomBytes(12);
+    const iv = crypto.createHash('sha256').update(name).digest().subarray(0, 12);
     const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
     const enc = Buffer.concat([cipher.update(salt(name)), cipher.final()]);
     const tag = cipher.getAuthTag();
