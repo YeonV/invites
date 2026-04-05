@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "generate-invites": "node generate-invites.cjs",
+    "generate-qr": "node generate-qr.cjs",
     "generate-qrcodes": "node generate-qrcodes.cjs",
     "generate-cards": "node generate-cards.cjs",
     "generate-cards2": "node generate-cards2.cjs",

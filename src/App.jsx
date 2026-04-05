@@ -13,93 +13,87 @@ function Briefing({ onClose }) {
 
         <div className="briefing-header">
           <div className="briefing-logo" style={{ backgroundImage: `url(${BASE}logo-full.svg)` }} />
+          <div className="briefing-title">XEON</div>
           <div className="briefing-subtitle">EDITION 2026</div>
+          <p className="briefing-tagline">Das offizielle Spieler-Briefing<br/>von Yeon und Leon</p>
           <p className="briefing-tagline">Lies es. Versteh es. Mach dich bereit.</p>
         </div>
 
+        <section className="briefing-section briefing-section--highlight">
+          <h2>Wann &amp; Wo</h2>
+          <p>[DATUM] – [UHRZEIT]<br/>Am Damm 24, 50996 Köln</p>
+          <p>Alles Weitere erfahrt ihr rechtzeitig. Merkt euch den Termin, der Rest ist unsere Sache.</p>
+        </section>
+
         <section className="briefing-section">
-          <div className="stat-row">
-            <div className="stat-card"><span className="stat-num">1</span><span className="stat-label">Abend</span></div>
-            <div className="stat-card"><span className="stat-num">9</span><span className="stat-label">Spiele</span></div>
-            <div className="stat-card"><span className="stat-num">1</span><span className="stat-label">Gewinner</span></div>
-          </div>
-          <p>Einzel- und Teamrunden im Wechsel. Teams werden jedes Mal neu ausgelost. Am Ende zählt nur dein Punktestand.</p>
-          <p>Für Essen, Drinks und Alkohol ist gesorgt. Ein verdammt guter Abend mit Freunden — bei dem es sich lohnt, alles zu geben.</p>
+          <h2>Was ist Xeon?</h2>
+          <p>Xeon ist eine jährliche Game Show – ein Abend, an dem ihr euch in verschiedenen Disziplinen miteinander messt. Eine echte Show mit Buzzern, Bildschirm, Zeitdruck und einem finalen Gewinner.</p>
+          <p>Ihr werdet individuell und in wechselnden Teams gegeneinander antreten. Die Teams werden vor jedem Teamspiel zufällig neu zusammengewürfelt, damit es fair bleibt. Am Ende zählt nur euer individueller Punktestand.</p>
+          <p>Die Game Show ist das Herzstück des Abends, aber nicht alles: Für Essen, Getränke und Alkohol ist gesorgt. Davor, danach und in den Pausen wird gefeiert, getrunken und gelacht. Betrachtet es als einen Abend mit Freunden, bei dem es einen verdammt guten Grund gibt, sein Bestes zu geben.</p>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <div className="section-heading"><span className="section-icon">🏆</span><h2>Der Wanderpokal</h2></div>
-          <p>Der Gewinner erhält den Pokal — und behält ihn ein ganzes Jahr. Bis zur nächsten Edition.</p>
-          <p className="briefing-accent">Dein Name. Auf dem Pokal. Für immer.</p>
+          <h2>Was gibt es zu gewinnen?</h2>
+          <p>Der Gewinner von Xeon erhält den offiziellen Xeon-Wanderpokal – und behält ihn ein ganzes Jahr lang. Bis zur nächsten Edition, wenn er verteidigt oder abgegeben werden muss. Der Pokal steht bei dir zuhause. Bis jemand ihn dir wegnimmt.</p>
+          <p>Dazu kommt die Xeon Hall of Fame – ein permanentes Denkmal für jeden Gewinner. Wer gewinnt, geht in die Geschichte ein. Der Pokal wandert, aber die Hall of Fame bleibt.</p>
+          <p className="briefing-accent">Die Frage ist: Wer eröffnet sie?</p>
         </section>
 
         <section className="briefing-section">
-          <h2>Was wird verlangt?</h2>
+          <h2>Was erwartet euch?</h2>
+          <p>Jeder von euch bekommt einen eigenen Buzzer. 9 Spiele. Einzel und Team im Wechsel. Kein Spiel, das ihr schon kennt.</p>
           <div className="skill-grid">
-            <div className="skill-card"><span className="skill-icon">🧠</span><strong>Kopf</strong><span>Logik, Mathe, Kombinieren</span></div>
-            <div className="skill-card"><span className="skill-icon">📚</span><strong>Wissen</strong><span>Allgemeinbildung, Wissenschaft, Geschichte</span></div>
-            <div className="skill-card"><span className="skill-icon">🤲</span><strong>Hände</strong><span>Geschicklichkeit, Bauen unter Druck</span></div>
-            <div className="skill-card"><span className="skill-icon">⚡</span><strong>Körper</strong><span>Reaktion, Timing, Körpergefühl</span></div>
-            <div className="skill-card"><span className="skill-icon">🎯</span><strong>Intuition</strong><span>Schätzen, Bauchgefühl</span></div>
-            <div className="skill-card"><span className="skill-icon">🤝</span><strong>Team</strong><span>Kommunikation, Strategie</span></div>
+            <div className="skill-card"><span className="skill-icon">🧠</span><strong>Logik</strong><span>Mathematik &amp; Kombinieren</span></div>
+            <div className="skill-card"><span className="skill-icon">📚</span><strong>Wissen</strong><span>Anwenden &amp; Kombinieren</span></div>
+            <div className="skill-card"><span className="skill-icon">🤲</span><strong>Geschick</strong><span>Präzision unter Druck</span></div>
+            <div className="skill-card"><span className="skill-icon">⚡</span><strong>Reaktion</strong><span>Timing &amp; Schnellsein</span></div>
+            <div className="skill-card"><span className="skill-icon">🎯</span><strong>Intuition</strong><span>Schätzen &amp; Bauchgefühl</span></div>
+            <div className="skill-card"><span className="skill-icon">🤝</span><strong>Team</strong><span>Kommunikation &amp; Strategie</span></div>
           </div>
-          <p style={{textAlign: 'center', marginTop: '1rem'}}>Wer in einer Sache gut ist, hat Chancen.<br/>Wer in vielen gut ist, gewinnt.</p>
+          <p style={{textAlign: 'center', marginTop: '1rem'}}>Wer in nur einer Disziplin stark ist, hat gute Chancen. Wer in vielen stark ist, gewinnt.</p>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <div className="section-heading"><span className="section-icon">📊</span><h2>Scoring</h2></div>
-          <div className="info-cards">
-            <div className="info-card">
-              <strong>Einzelspiel</strong>
-              <span>Punkte direkt auf dein Konto</span>
-            </div>
-            <div className="info-card">
-              <strong>Teamspiel</strong>
-              <span>Teampunkte für jedes Mitglied</span>
-            </div>
-          </div>
-          <p><strong>Kein Spiel entscheidet allein.</strong> Konsistenz wird belohnt — aber Aufholjagden sind möglich.</p>
+          <h2>Wie funktioniert das Scoring?</h2>
+          <p>Jedes Spiel bringt Punkte. Bei Einzelspielen bekommt ihr eure Punkte direkt. Bei Teamspielen bekommt jedes Teammitglied die Teampunkte auf sein individuelles Konto.</p>
+          <p>Die genaue Punktevergabe variiert je nach Spiel – manchmal zählt Geschwindigkeit, manchmal Präzision, manchmal reines Ranking. Die Regeln werden vor jedem Spiel erklärt.</p>
+          <p>Zur Halbzeit erfahrt ihr, wer vorne liegt. Das vollständige Ranking aller Spieler gibt es erst ganz am Ende.</p>
+          <p><strong>Wichtig:</strong> Kein einzelnes Spiel entscheidet über den Sieg. Konstante Leistung wird belohnt. Aber auch das letzte Spiel kann noch alles auf den Kopf stellen – gebt also nie auf.</p>
         </section>
 
         <section className="briefing-section">
-          <div className="section-heading"><span className="section-icon">⚖️</span><h2>3 Regeln</h2></div>
+          <h2>Die Regeln</h2>
           <div className="rule-list">
-            <div className="rule-card">
-              <span className="rule-num">1</span>
-              <div><strong>Spielleiter haben recht.</strong><br/>Immer. Keine Diskussion.</div>
-            </div>
-            <div className="rule-card">
-              <span className="rule-num">2</span>
-              <div><strong>Fair spielen.</strong><br/>Kein Schummeln. Bei Graubereichen: fragen.</div>
-            </div>
-            <div className="rule-card">
-              <span className="rule-num">3</span>
-              <div><strong>Alles geben.</strong><br/>Halbherzig ist das Einzige, was nicht geht.</div>
-            </div>
+            <div className="rule-card"><span className="rule-num">1</span><div><strong>Die Spielleiter haben immer recht.</strong><br/>Entscheidungen von Yeon und Leon sind endgültig.</div></div>
+            <div className="rule-card"><span className="rule-num">2</span><div><strong>Spielt fair.</strong><br/>Kein Schummeln oder Regelbeugung – bei Unsicherheit: fragt.</div></div>
+            <div className="rule-card"><span className="rule-num">3</span><div><strong>Gebt alles.</strong><br/>Halbherziges Mitmachen ist nicht erlaubt.</div></div>
           </div>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <div className="section-heading"><span className="section-icon">🔮</span><h2>Vorbereitung?</h2></div>
-          <p>Geht nicht — und das ist Absicht. Kein Spezialwissen rettet euch.</p>
-          <p>Was hilft: breiter Horizont, schnelles Denken, ruhige Hände.</p>
-          <p className="briefing-accent">Es wird kein Spiel geben, das ihr schon kennt.</p>
+          <h2>Was muss ich mitbringen?</h2>
+          <p>Nichts. Alles, was ihr braucht, ist vor Ort – inklusive Essen, Getränke und Alkohol. Bringt nur euch selbst, gute Laune und den Willen, den Pokal mit nach Hause zu nehmen mit.</p>
         </section>
 
         <section className="briefing-section">
-          <h2>Der Abend</h2>
+          <h2>Was sollte ich vorher wissen?</h2>
+          <p>Ihr könnt euch nicht gezielt vorbereiten – und das ist Absicht. Die Spiele decken so unterschiedliche Fähigkeiten ab, dass kein Spezialwissen euch rettet. Was hilft: ein breiter Horizont, schnelles Denken und ruhige Hände unter Druck.</p>
+          <p>Erwartet das Unerwartete. Manche Spiele erfordern stilles Nachdenken. Andere verlangen blitzschnelle Reaktionen. Wieder andere werden euch zum Lachen bringen – auch über euch selbst.</p>
+        </section>
+
+        <section className="briefing-section">
+          <h2>Ablauf des Abends</h2>
           <div className="timeline">
-            <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen</strong><span>Drinks, Essen, Einstimmen</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Show</strong><span>~2,5h · 9 Spiele · eine Pause</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Finale</strong><span>Siegerehrung & Pokal</span></div>
-            <div className="timeline-item"><span className="timeline-dot" /><strong>Danach</strong><span>Feiern, oder über Punkte ärgern</span></div>
+            <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen</strong><span>Drinks, Essen – Zeit zum Einstimmen</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Game Show</strong><span>ca. 2,5 Stunden · 9 Spiele · eine Pause</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Siegerehrung</strong><span>Pokalübergabe &amp; Hall of Fame</span></div>
+            <div className="timeline-item"><span className="timeline-dot" /><strong>Danach</strong><span>Feiern, Drinks, Revue passieren lassen</span></div>
           </div>
         </section>
 
         <section className="briefing-section briefing-section--final">
-          <p className="briefing-accent">Kommt ausgeruht.<br/>Kommt hungrig auf den Sieg.</p>
-          <p>Und unterschätzt niemanden.</p>
-          <div className="briefing-footer">Xeon — Edition 2026</div>
+          <p className="briefing-accent">Wir sehen uns am Spieltag.<br/>Kommt ausgeruht. Kommt hungrig auf den Sieg.<br/>Und unterschätzt niemanden.</p>
+          <div className="briefing-footer">Xeon – Edition 2026</div>
         </section>
 
         <button className="briefing-close" onClick={onClose}>Zurück</button>
