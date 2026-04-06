@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  flex-shrink: 0;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -34,7 +38,7 @@ html, body {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1.3);
+  transform: translate(-50%, -50%) scale(1);
   width: min(90vw, 430px);
   height: auto;
   opacity: 0.85;
@@ -157,7 +161,7 @@ html, body {
 }
 
 .invite-avatar {
-  margin-top: 2rem;
+  margin-top: 10rem;
   width: min(300px, 70vw);
   height: min(300px, 70vw);
   border-radius: 50%;
@@ -169,6 +173,9 @@ html, body {
 }
 
 .invite-name {
+  padding: 0 16px;
+  width: 100%;
+  justify-content: space-between;
   font-family: system-ui, sans-serif;
   font-size: 2.6rem;
   font-weight: 900;
@@ -176,6 +183,45 @@ html, body {
   margin: 0;
   letter-spacing: -0.02em;
   text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.invite-meta {
+  width: min(92vw, 420px);
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
+}
+
+.invite-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(12px);
+}
+
+.invite-meta-label {
+  font-family: system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.invite-meta-value {
+  font-family: system-ui, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: right;
+  letter-spacing: -0.01em;
 }
 
 .invite-text {
@@ -192,6 +238,45 @@ html, body {
 .bottom-spacer {
   height: 10rem;
   flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .invite-avatar {
+    margin-top: 4.7rem;
+    width: min(260px, 68vw);
+    height: min(260px, 68vw);
+  }
+
+  .invite-meta {
+    width: min(93vw, 420px);
+    margin-top: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .invite-meta-row {
+    padding: 0.72rem 0.82rem;
+    border-radius: 0.82rem;
+  }
+
+  .invite-meta-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  .invite-meta-value {
+    font-size: 0.95rem;
+  }
+
+  .invite-card {
+    margin-top: 1.1rem;
+    width: min(93vw, 420px);
+    padding: 1.35rem 1rem;
+  }
+
+  .invite-text {
+    font-size: 1.22rem;
+    letter-spacing: 0.06em;
+  }
 }
 
 .bottom-dock {
@@ -251,30 +336,44 @@ html, body {
 
 /* ── Briefing fullscreen dialog ──────────────────────────────────── */
 .briefing-overlay {
+  --briefing-bg: #090b12;
+  --briefing-surface: rgba(255, 255, 255, 0.04);
+  --briefing-surface-strong: rgba(255, 255, 255, 0.08);
+  --briefing-border: rgba(255, 255, 255, 0.12);
+  --briefing-text: rgba(245, 247, 255, 0.86);
+  --briefing-muted: rgba(245, 247, 255, 0.56);
+  --briefing-accent: #ffd43b;
+  --briefing-accent-soft: rgba(255, 212, 59, 0.24);
+  --briefing-shadow: 0 28px 80px rgba(0, 0, 0, 0.48);
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: #0e0e1a;
-  overflow-y: auto;
-  animation: briefing-in 0.4s ease both;
+  background:
+    radial-gradient(1200px 500px at 50% -180px, rgba(255, 212, 59, 0.12), transparent 65%),
+    radial-gradient(900px 460px at 85% 105%, rgba(105, 157, 255, 0.1), transparent 65%),
+    var(--briefing-bg);
+  overflow: hidden;
+  animation: briefing-in 0.36s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 @keyframes briefing-in {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .briefing-scroll {
-  height: 100%;
+  height: 100dvh;
+  max-width: 460px;
+  margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 2rem 1.5rem 6rem;
+  padding: 1.25rem 0.85rem 9.8rem;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 220, 0, 0.3) transparent;
+  scrollbar-color: rgba(255, 212, 59, 0.35) transparent;
 }
 
 .briefing-scroll::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 .briefing-scroll::-webkit-scrollbar-track {
@@ -282,64 +381,76 @@ html, body {
 }
 
 .briefing-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 220, 0, 0.3);
+  background: rgba(255, 212, 59, 0.34);
   border-radius: 3px;
 }
 
 .briefing-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 220, 0, 0.5);
+  background: rgba(255, 212, 59, 0.54);
 }
 
 .briefing-header {
   text-align: center;
-  padding: 3rem 0 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 2rem;
+  padding: 1.2rem 0.85rem 1.15rem;
+  margin-bottom: 0.95rem;
+  border: 1px solid var(--briefing-border);
+  border-radius: 1.25rem;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--briefing-shadow);
 }
 
 .briefing-logo {
   width: 100%;
-  height: 150px;
+  height: 112px;
   background-position: center center;
-  background-size: 135%;
+  background-size: 140%;
   background-repeat: no-repeat;
+  filter: drop-shadow(0 0 20px rgba(255, 212, 59, 0.2));
 }
 
 .briefing-subtitle {
   font-family: system-ui, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: rgba(255, 220, 0, 0.8);
-  letter-spacing: 0.2em;
-  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: rgba(255, 212, 59, 0.9);
+  letter-spacing: 0.24em;
+  margin-top: 0.35rem;
 }
 
 .briefing-meta {
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 0.85rem;
-  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 0.8rem;
+  margin-top: 1.1rem;
 }
 
 .briefing-tagline {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1rem;
-  font-weight: 600;
-  font-style: italic;
-  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.98rem;
+  font-weight: 620;
+  margin-top: 0.55rem;
+  line-height: 1.45;
 }
 
 .briefing-section {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 1.28rem;
+  padding: 1.05rem 0.84rem 1.18rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, var(--briefing-surface-strong), var(--briefing-surface));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.briefing-section:last-of-type {
+  margin-bottom: 0;
 }
 
 .briefing-section h2 {
   font-family: system-ui, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 1rem;
+  font-size: 1.14rem;
+  font-weight: 850;
+  color: #fffef8;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.01em;
 }
 
 .section-heading h2 {
@@ -348,35 +459,35 @@ html, body {
 
 .briefing-section p {
   font-family: system-ui, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.56;
+  color: var(--briefing-text);
+  margin: 0 0 0.62rem;
 }
 
 .briefing-section ul,
 .briefing-section ol {
   padding-left: 1.2rem;
-  margin: 0.8rem 0;
+  margin: 0.65rem 0;
 }
 
 .briefing-section li {
   font-family: system-ui, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.56;
+  color: var(--briefing-text);
+  margin-bottom: 0.5rem;
 }
 
 .briefing-section li strong {
-  color: #fff;
+  color: #fffef9;
 }
 
 /* ── Stat row (1 Abend / 9 Spiele / 1 Gewinner) ─────────────────── */
 .stat-row {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.2rem;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
 }
 
 .stat-card {
@@ -384,109 +495,111 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.8rem;
+  padding: 0.9rem 0.5rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.85rem;
 }
 
 .stat-num {
   font-family: system-ui, sans-serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 900;
-  color: #fff;
+  color: #fffef8;
   line-height: 1;
 }
 
 .stat-label {
   font-family: system-ui, sans-serif;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.46);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   margin-top: 0.2rem;
 }
 
 /* ── Section icon + heading in one row ────────────────────────────── */
 .section-icon {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   line-height: 1;
 }
 
 .section-heading {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.45rem;
+  margin-bottom: 0.8rem;
 }
 
 /* ── Info cards (Scoring) ────────────────────────────────────────── */
 .info-cards {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.55rem;
+  margin-bottom: 0.8rem;
 }
 
 .info-card {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.25rem;
   padding: 0.8rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 0.85rem;
 }
 
 .info-card strong {
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
-  color: #fff;
+  color: #fffef8;
 }
 
 .info-card span {
   font-family: system-ui, sans-serif;
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 /* ── Rule cards ──────────────────────────────────────────────────── */
 .rule-list {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .rule-card {
   display: flex;
   align-items: flex-start;
-  gap: 0.8rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.8rem;
+  gap: 0.7rem;
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 0.85rem;
 }
 
 .rule-num {
   font-family: system-ui, sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 900;
-  color: rgba(255, 220, 0, 0.7);
+  color: rgba(255, 212, 59, 0.9);
   line-height: 1;
   flex-shrink: 0;
-  width: 2rem;
+  width: 1.8rem;
   text-align: center;
 }
 
 .rule-card div {
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.54;
+  color: var(--briefing-text);
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .rule-card strong {
-  color: #fff;
+  color: #fffef8;
 }
 
 /* ── Timeline (Der Abend) ────────────────────────────────────────── */
@@ -495,58 +608,58 @@ html, body {
   flex-direction: column;
   gap: 0;
   position: relative;
-  padding-left: 1.8rem;
+  padding-left: 1.55rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0.55rem;
+  left: 0.47rem;
   top: 0.6rem;
   bottom: 0.6rem;
   width: 2px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(to bottom, rgba(255, 212, 59, 0.45), rgba(255, 255, 255, 0.08));
 }
 
 .timeline-item {
   display: flex;
   flex-direction: column;
-  padding: 0.8rem 0;
+  padding: 0.65rem 0;
   position: relative;
 }
 
 .timeline-dot {
   position: absolute;
-  left: -1.35rem;
-  top: 1rem;
-  width: 10px;
-  height: 10px;
+  left: -1.2rem;
+  top: 0.86rem;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid #0e0e1a;
+  background: rgba(255, 255, 255, 0.26);
+  border: 2px solid var(--briefing-bg);
 }
 
 .timeline-dot--accent {
-  background: rgba(255, 220, 0, 0.7);
+  background: rgba(255, 212, 59, 0.95);
 }
 
 .timeline-item strong {
   font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  color: #fff;
+  font-size: 0.98rem;
+  color: #fffef8;
 }
 
 .timeline-item > span {
   font-family: system-ui, sans-serif;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  color: var(--briefing-muted);
   margin-top: 0.1rem;
 }
 
 .skill-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
+  gap: 0.48rem;
 }
 
 .skill-card {
@@ -554,83 +667,201 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.8rem;
-  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.85rem;
+  padding: 0.9rem 0.45rem;
   text-align: center;
 }
 
 .skill-icon {
-  font-size: 1.8rem;
+  font-size: 1.65rem;
   line-height: 1;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .skill-card strong {
   font-family: system-ui, sans-serif;
-  font-size: 0.95rem;
-  color: #fff;
+  font-size: 0.9rem;
+  color: #fffef8;
 }
 
 .skill-card span:last-child {
   font-family: system-ui, sans-serif;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.4);
-  line-height: 1.3;
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.32;
 }
 
 .briefing-section--highlight {
-  background: rgba(255, 220, 0, 0.04);
-  border: 1px solid rgba(255, 220, 0, 0.1);
+  background:
+    linear-gradient(165deg, rgba(255, 212, 59, 0.11), rgba(255, 212, 59, 0.04));
+  border: 1px solid rgba(255, 212, 59, 0.28);
   border-radius: 1rem;
-  padding: 1.5rem;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .briefing-accent {
-  color: rgba(255, 220, 0, 0.9) !important;
+  color: rgba(255, 225, 110, 1) !important;
   font-weight: 700 !important;
-  font-size: 1.05rem !important;
+  font-size: 1.03rem !important;
 }
 
 .briefing-section--final {
   text-align: center;
-  border-bottom: none;
-  padding-top: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.briefing-masters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.85rem;
+}
+
+.briefing-master {
+  margin: 0;
+  padding: 0.78rem 0.58rem 0.75rem;
+  border-radius: 0.9rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: none;
+}
+
+.briefing-master-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.78rem;
+  border: none;
+  box-shadow: none;
+}
+
+.briefing-master figcaption {
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 200, 0.9);
+  font-weight: 700;
 }
 
 .briefing-section--final p {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.18rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.48;
+  margin-bottom: 0.48rem;
 }
 
 .briefing-footer {
   font-family: system-ui, sans-serif;
-  font-size: 0.8rem;
+  text-align: center;
+  font-size: 0.74rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.2);
-  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin-top: 1.35rem;
 }
 
 .briefing-close {
   position: fixed;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  right: 0.75rem;
-  padding: 0.9rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(14, 14, 26, 0.95);
-  backdrop-filter: blur(12px);
-  color: #fff;
+  transform: none;
+  bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  left: 0.72rem;
+  right: 0.72rem;
+  width: auto;
+  max-width: 446px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.92rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(180deg, rgba(18, 21, 35, 0.95), rgba(10, 12, 21, 0.95));
+  backdrop-filter: blur(14px);
+  color: #fffef8;
   font-family: system-ui, sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.02rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  z-index: 101;
+  z-index: 300;
   text-align: center;
+  box-shadow:
+    0 14px 36px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.briefing-close:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 212, 59, 0.44);
+  background: linear-gradient(180deg, rgba(27, 30, 50, 0.96), rgba(12, 15, 26, 0.96));
+}
+
+.briefing-close:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .briefing-scroll {
+    padding: 1rem 0.72rem calc(9.2rem + env(safe-area-inset-bottom));
+  }
+
+  .briefing-header {
+    padding: 1.1rem 0.75rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .briefing-logo {
+    height: 108px;
+    background-size: contain;
+  }
+
+  .briefing-subtitle {
+    font-size: 0.67rem;
+  }
+
+  .briefing-tagline {
+    font-size: 0.88rem;
+  }
+
+  .briefing-section {
+    margin-bottom: 1.08rem;
+    padding: 1rem 0.8rem 1.1rem;
+  }
+
+  .briefing-masters {
+    gap: 0.64rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .briefing-master {
+    padding: 0.6rem 0.45rem;
+  }
+
+  .briefing-section--final {
+    padding-top: 1.1rem;
+    padding-bottom: 1.22rem;
+  }
+
+  .briefing-section--final p {
+    font-size: 1.12rem;
+  }
+
+  .briefing-close {
+    font-size: 0.98rem;
+    padding: 0.86rem;
+    left: 0.72rem;
+    right: 0.72rem;
+  }
 }

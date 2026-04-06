@@ -83,13 +83,23 @@ function Briefing({ onClose }) {
           </div>
         </section>
 
-        <section className="briefing-section briefing-section--final">
-          <p className="briefing-accent">Wir sehen uns am Spieltag.<br/>Kommt ausgeruht. Kommt hungrig auf den Sieg.<br/>Und unterschätzt niemanden.</p>
-          <div className="briefing-footer">Xeon – Edition 2026</div>
+        
+<section className="briefing-section briefing-section--final">
+  <div className="briefing-masters" aria-label="Game Masters">
+          <figure className="briefing-master">
+            <img src={`${BASE}Yeon.png`} alt="Game Master Yeon" className="briefing-master-img" />
+          </figure>
+          <figure className="briefing-master">
+            <img src={`${BASE}Leon.png`} alt="Game Master Leon" className="briefing-master-img" />
+          </figure>
+        </div>
+          
+
+        <div className="briefing-footer"><p className="briefing-accent">Wir freuen uns auf euch!</p>Xeon – Edition 2026</div>
         </section>
 
-        <button className="briefing-close" onClick={onClose}>Zurück</button>
       </div>
+      <button className="briefing-close" onClick={onClose}>Zurück</button>
     </div>
   )
 }
@@ -171,7 +181,7 @@ export default function App() {
       {phase === 'revealed' && data && (
         <>
           {avatar && <img src={avatar} alt={data.name} className="invite-avatar invite-card--enter" />}
-          <h1 className="invite-name">{data.name}</h1>
+          <h1 className="invite-name invite-card--enter">Player {data.name}</h1>
           <div className="invite-card invite-card--enter">
             <p className="invite-text">You are invited!</p>
           </div>
