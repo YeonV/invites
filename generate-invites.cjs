@@ -11,7 +11,9 @@ const players = fs.readdirSync(AVATAR_DIR)
   .sort()
   .map(f => f.replace('.png', ''));
 
-function salt(name) { return `${SECRET}::${name}::xeon2026`; }
+// Map display names to the salt name used when their code was originally generated
+const saltAliases = { 'Yannick': 'Yanick' };
+function salt(name) { return `${SECRET}::${saltAliases[name] || name}::xeon2026`; }
 
 const encoders = [
   // 1. UUID v4 style (random, formatted as UUID)
