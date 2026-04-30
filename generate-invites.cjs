@@ -6,10 +6,18 @@ const SECRET = 'You should have known better';
 const DATA_DIR = path.join(__dirname, 'public', 'data');
 const AVATAR_DIR = path.join(__dirname, 'src', 'assets', 'avatars');
 
-const players = fs.readdirSync(AVATAR_DIR)
-  .filter(f => f.endsWith('.png'))
-  .sort()
-  .map(f => f.replace('.png', ''));
+// Canonical player order — DO NOT reorder existing names, only append new ones.
+// Each player's encoder is determined by their index here, so reordering would
+// invalidate already-distributed invite codes/QRs.
+const PLAYER_ORDER = [
+  'Andreas', 'Bastian', 'Blade', 'Fabio', 'Frank', 'Jan', 'Johanna',
+  'Leon', 'Lorain', 'Pepe', 'Saida', 'Sinja', 'Susi', 'Tom',
+  'Tristan', 'Xeon', 'Yannick', 'Zoe',
+  'Pablo',
+];
+const players = PLAYER_ORDER.filter(name =>
+  fs.existsSync(path.join(AVATAR_DIR, `${name}.png`))
+);
 
 // Map display names to the salt name used when their code was originally generated
 const saltAliases = { 'Yannick': 'Yanick' };
@@ -81,6 +89,8 @@ const encoders = [
   (name) => crypto.createHash('md5').update(salt(name)).digest('hex'),
   // 18. SHA1
   (name) => crypto.createHash('sha1').update(salt(name)).digest('hex'),
+  // 19. SHA3-512 hex
+  (name) => crypto.createHash('sha3-512').update(salt(name)).digest('hex'),
 ];
 
 // Clean data dir
