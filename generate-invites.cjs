@@ -13,7 +13,7 @@ const PLAYER_ORDER = [
   'Andreas', 'Bastian', 'Blade', 'Fabio', 'Frank', 'Jan', 'Johanna',
   'Leon', 'Lorain', 'Pepe', 'Saida', 'Sinja', 'Susi', 'Tom',
   'Tristan', 'Xeon', 'Yannick', 'Zoe',
-  'Pablo',
+  'Pablo', 'Berit'
 ];
 const players = PLAYER_ORDER.filter(name =>
   fs.existsSync(path.join(AVATAR_DIR, `${name}.png`))
@@ -91,6 +91,8 @@ const encoders = [
   (name) => crypto.createHash('sha1').update(salt(name)).digest('hex'),
   // 19. SHA3-512 hex
   (name) => crypto.createHash('sha3-512').update(salt(name)).digest('hex'),
+  // 20. SHA3-256 hex
+  (name) => crypto.createHash('sha3-256').update(salt(name)).digest('hex'),
 ];
 
 // Clean data dir
