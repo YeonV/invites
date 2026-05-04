@@ -118,43 +118,54 @@ function AnalystBriefing({ onClose }) {
         <section className="briefing-section">
           <h2>Was ist Xeon?</h2>
           <p>Xeon ist eine jährliche Game Show – ein Abend, an dem sich unsere Freundesgruppe in verschiedenen Disziplinen miteinander misst. Eine echte Show mit Buzzern, Bildschirm, Zeitdruck und einem finalen Gewinner. Dazu Essen, Getränke, Alkohol und ein Abend, an dem garantiert viel gelacht wird.</p>
-          <p>In der ersten Edition treten bis zu 16 <strong>Spieler</strong> in 9 Spielen gegeneinander an – einzeln und in wechselnden Teams. Daneben gibt es eine zweite, gleichwertige Rolle: <strong>Xeon Analyst</strong>. Eigene Wettbewerbe, eigene Preise, eigene Wege ins Spielerfeld.</p>
+          <p>Wir machen das zum ersten Mal, und es soll eine jährliche Tradition werden. In der ersten Edition spielen 12–16 Spieler in 9 Spielen gegeneinander – einzeln und in wechselnden Teams. Am Ende gibt es einen Wanderpokal und eine Hall of Fame.</p>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <h2>Zwei Rollen, ein Abend</h2>
-          <p>Xeon hat 16 Spielerplätze. Buzzer-System, Teamgrößen, Materialmengen, Zeitplanung – alles ist auf diese Zahl ausgelegt. Mehr würden den Abend sprengen.</p>
-          <p>Damit wir trotzdem alle dabeihaben, mit denen wir den Abend feiern wollen, hat die Show zwei Rollen, die nebeneinander laufen:</p>
-          <p><strong>Spieler</strong> kämpfen in den 9 Spielen um den Wanderpokal und die Hall of Fame.<br/><strong>Analysten</strong> haben ihre eigenen Wettbewerbe, ihre eigenen Preise – und mehrere Wege, im Laufe des Abends ins Spielerfeld zu wechseln.</p>
-          <p className="briefing-accent">Beide Rollen sind voll Teil des Abends. Die Aufteilung am Start ist nur das – ein Start. Sie kann sich im Laufe des Abends verschieben.</p>
+          <h2>Ein Wort zur Spielerauswahl</h2>
+          <p>Kurz und ehrlich: Einige Spiele funktionieren nur mit einer festen Obergrenze von 16 Spielern. Buzzer-System, Teamgrößen, Materialmengen, Zeitplanung – alles ist auf diese Zahl ausgelegt. Mehr Spieler würden den Abend sprengen.</p>
+          <p>Weil wir aber mehr als 16 Leute sind, die wir dabeihaben wollen, mussten wir eine Auswahl treffen. Neben wenigen Stammspielern war diese Auswahl rein zufällig und wird es auch in zukünftigen Editionen sein. Es war keine Bewertung, wer es mehr verdient hat oder wer besser reinpasst.</p>
+          <p className="briefing-accent">Das heißt für dich: Du bist als Xeon Analyst dabei. Eine eigene Rolle, eigene Aufgaben, ein eigener Wettbewerb mit eigenem Hauptpreis. Und falls am Spieltag ein Platz frei wird, übernimmst du.</p>
         </section>
 
         <section className="briefing-section">
           <h2>Deine Rolle: Xeon Analyst</h2>
-          <p>Analysten sind keine Zuschauer. Du hast eigene Aufgaben, eigene Wettbewerbe, eigene Preise – und wenn du willst, einen direkten Weg ins Hauptfeld.</p>
+          <p>Analysten sind keine Zuschauer. Du hast eine eigene Rolle, eine eigene Wertung und einen eigenen Hauptpreis. Hier ist, was dich am Abend erwartet.</p>
           <div className="rule-list">
-            <div className="rule-card"><span className="rule-num">1</span><div><strong>Das Tipp-Spiel</strong><br/>Vor jedem Spiel gibst du eine Prognose ab: Wer gewinnt? Welches Team wird Erster? Wie hoch, wie schnell, wie nah dran? Du bekommst Punkte für richtige Einschätzungen – über den gesamten Abend hinweg. Am Ende wird der beste Analyst gekürt.<br/><br/><strong>Der Preis:</strong> Eine Wildcard für Xeon 2027. Heißt konkret: Du wirst beim nächsten Randomizer für Nicht-Stammspieler ausgenommen. Dein Spielerplatz im nächsten Jahr steht – kein Los, kein Zufall.</div></div>
-            <div className="rule-card"><span className="rule-num">2</span><div><strong>Die Jury</strong><br/>Bei mindestens einem Spiel werden die Analysten zur offiziellen Jury. Eure Bewertung entscheidet mit über das Ranking der Spieler. Mehr verraten wir nicht – aber es wird lustig.</div></div>
-            <div className="rule-card"><span className="rule-num">3</span><div><strong>Mitspielen</strong><br/>Bei einigen Spielen könnt ihr als Analysten direkt mitmachen – in eurem eigenen Analysten-Wettbewerb. Welche Spiele das sind, erfahrt ihr am Abend.</div></div>
-            <div className="rule-card"><span className="rule-num">4</span><div><strong>Xeon Moment of the Night</strong><br/>Eure zweite Mission: Haltet die besten Momente des Abends mit der Handykamera fest – lustig, dramatisch, absurd. Ihr wisst, was gemeint ist. Am Ende des Abends wird das beste Foto gekürt. Handy geladen mitbringen.</div></div>
-            <div className="rule-card"><span className="rule-num">5</span><div><strong>Die Analyst-Battle</strong><br/>Direkt zu Beginn des Abends gibt es die Analyst-Battle. Ausgewählte Analysten treten gegeneinander an – die Sieger werden zu vollwertigen Spielern befördert, mit allen Rechten, allen Punkten und der Chance auf den Pokal. Wer als Analyst startet, ist also nicht zwingend Analyst, wenn die Show losgeht.</div></div>
-            <div className="rule-card"><span className="rule-num">6</span><div><strong>Rollen-Wechsel</strong><br/>Spieler dürfen sich bei Lampenfieber, plötzlichem Unwohlsein oder einfach aus eigenem Wunsch in den Analysten-Modus zurückziehen – und geben damit ihren Spielerplatz frei. Dieser Platz wird dann mit einem Analysten besetzt: voller Spielerstatus, alle Rechte, alle Punkte. Die Plätze sind nicht in Stein gemeißelt.</div></div>
+            <div className="rule-card"><span className="rule-num">1</span><div><strong>Was zu gewinnen ist: Die Wildcard 2027</strong><br/>Der beste Xeon Analyst gewinnt die Wildcard für die nächste Edition. Das bedeutet: Du sitzt 2027 garantiert mit am Tisch – kein Los, kein Zufall.<br/><br/>Aber die Wildcard ist mehr als nur ein Platz. Sie ist das <strong>Privileg der freien Wahl</strong>. Du allein entscheidest, ob du 2027 als Spieler antrittst – oder als Analyst zurückkehrst, wenn dir die Rolle gefallen hat. Niemand sonst hat diese Wahl. Bei allen anderen entscheidet der Zufall. Bei dir entscheidest du.</div></div>
+            <div className="rule-card"><span className="rule-num">2</span><div><strong>Das Tipp-Spiel</strong><br/>Vor jedem Spiel gibst du eine Prognose ab: Du bekommst Punkte für richtige Einschätzungen – über den gesamten Abend hinweg. Am Ende wird der beste Analyst gekürt. Er gewinnt die Wildcard.</div></div>
+            <div className="rule-card"><span className="rule-num">3</span><div><strong>Die Jury</strong><br/>Bei einem der Spiele werdet ihr zur Jury. Eure Bewertung ist verbindlich – sie geht direkt in die Spielerwertung ein. Kein Veto, keine Korrektur. Welches Spiel das ist, sagen wir am Abend.</div></div>
+            <div className="rule-card"><span className="rule-num">4</span><div><strong>Analyst Insight</strong><br/>Vor jedem Spiel hast du die Option, deinen Tipp, dein Bauchgefühl, deine These zu verkünden. Du musst nicht – aber wer etwas zu sagen hat, soll es sagen. Das hier ist auch deine Bühne.</div></div>
+            <div className="rule-card"><span className="rule-num">5</span><div><strong>Xeon Moment of the Night</strong><br/>Halte die besten Momente des Abends mit der Handykamera fest – lustig, dramatisch, absurd. Du weißt, was gemeint ist. Am Ende des Abends wird das beste Foto gekürt: der Xeon Moment of the Night. Handy geladen mitbringen.</div></div>
           </div>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
+          <h2>Das Analysten-Battle und der Lead Analyst</h2>
+          <p>Bevor die Show startet, treten die Analysten in einem eigenen, kurzen Wettbewerb gegeneinander an: dem Analysten-Battle. Es entscheidet zwei Dinge.</p>
+          <p><strong>Erstens:</strong> Falls am Spieltag ein Platz frei wird, ist die Reihenfolge, wer ihn übernimmt, nicht zufällig. Sie wird im Battle gespielt.</p>
+          <p><strong>Zweitens:</strong> Den <strong>Lead Analyst</strong> des Abends. Wer das Battle gewinnt – sofern er nicht selbst auf einen Spielerplatz wechselt – ist Sprecher der Analysten. Bei Jury-Entscheidungen mit Patt-Stand entscheidet er.</p>
+          <p className="briefing-accent">Welches Spiel das Battle ist, erfährst du am Spieltag.</p>
+        </section>
+
+        <section className="briefing-section">
+          <h2>Wenn der Spielerplatz frei wird</h2>
+          <p>Falls ein Spieler kurzfristig absagt, am Spieltag verhindert ist – oder sich kurz vor Showbeginn doch nicht im Spielfeld sieht – übernimmt einer von euch den Platz. Die Reihenfolge dafür hat das Battle bestimmt.</p>
+          <p>Das ist nicht Plan B des Abends, sondern Teil des Plans A: Die Show funktioniert nur, wenn jemand mit voller Überzeugung einsteigt – ohne Anlauf, ohne Ausrede. Wer übernimmt, übernimmt mit allen Rechten und allen Chancen: Punkte ab dem ersten Spiel, Pokal in Reichweite, Hall of Fame in Reichweite.</p>
+        </section>
+
+        <section className="briefing-section">
           <h2>Der Abend</h2>
-          <p>Xeon ist zuerst ein Abend mit Freunden. Essen, Getränke und Alkohol sind da. Die Game Show ist das Herzstück, aber davor, danach und in der Pause wird gefeiert, geredet und gelacht. Du bist den ganzen Abend mittendrin – beim Anfeuern, beim Mitfiebern, beim Kommentieren und beim Feiern danach.</p>
-          <p className="briefing-accent">Und seien wir ehrlich: Zuzuschauen, wie Freunde unter Zeitdruck seltsame Dinge tun, ist mindestens genauso unterhaltsam wie es selbst zu tun.</p>
+          <p>Xeon ist zuerst ein Abend mit Freunden. Essen, Getränke und Alkohol sind da. Die Game Show ist das Herzstück, aber davor, danach und in der Pause wird gefeiert, geredet und gelacht. Du bist den ganzen Abend mittendrin – beim Tippen, Bewerten, Anfeuern, Kommentieren und Feiern.</p>
         </section>
 
         <section className="briefing-section">
           <h2>Ablauf des Abends</h2>
           <div className="timeline">
-            <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen</strong><span>Drinks, Essen, Zeit zum Einstimmen</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Analyst-Battle</strong><span>Eröffnungsmatch – die Sieger rücken ins Spielerfeld</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Game Show</strong><span>ca. 2–2,5 Stunden · 9 Spiele · eine Pause · du bist als Analyst mit eigenen Aufgaben dabei</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Siegerehrung &amp; Analysten-Awards</strong><span>Der Moment der Wahrheit – für Spieler und Analysten</span></div>
+            <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen, Drinks, Essen</strong><span>Zeit zum Ankommen und Einstimmen</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Das Analysten-Battle</strong><span>Kurzes Vorspiel unter euch – klärt Reihenfolge und Lead Analyst</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Game Show</strong><span>ca. 3 Stunden · 9 Spiele · eine Pause dazwischen</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Siegerehrung</strong><span>Der Moment der Wahrheit – für Spieler und Analysten</span></div>
             <div className="timeline-item"><span className="timeline-dot" /><strong>Hausfest</strong><span>Feiern, Drinks, den Abend Revue passieren lassen</span></div>
           </div>
         </section>
@@ -174,7 +185,7 @@ function AnalystBriefing({ onClose }) {
             </figure>
           </div>
 
-          <div className="briefing-footer"><p className="briefing-accent">Wir sehen uns am Spieltag.<br/>Komm hungrig. Nicht nur auf den Sieg.</p>Xeon – Edition 2026</div>
+          <div className="briefing-footer"><p className="briefing-accent">Wir freuen uns auf euch!</p>Xeon – Edition 2026</div>
         </section>
 
       </div>
