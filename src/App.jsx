@@ -125,7 +125,7 @@ function AnalystBriefing({ onClose }) {
           <h2>Ein Wort zur Spielerauswahl</h2>
           <p>Kurz und ehrlich: Einige Spiele funktionieren nur mit einer festen Obergrenze von 16 Spielern. Buzzer-System, Teamgrößen, Materialmengen, Zeitplanung – alles ist auf diese Zahl ausgelegt. Mehr Spieler würden den Abend sprengen.</p>
           <p>Weil wir aber mehr als 16 Leute sind, die wir dabeihaben wollen, mussten wir eine Auswahl treffen. Neben wenigen Stammspielern war diese Auswahl rein zufällig und wird es auch in zukünftigen Editionen sein. Es war keine Bewertung, wer es mehr verdient hat oder wer besser reinpasst.</p>
-          <p className="briefing-accent">Das heißt für dich: Du bist als Xeon Analyst dabei. Eine eigene Rolle, eigene Aufgaben, ein eigener Wettbewerb mit eigenem Hauptpreis. Und falls am Spieltag ein Platz frei wird, übernimmst du.</p>
+          <p className="briefing-accent">Das heißt für dich: Du bist als Xeon Analyst dabei. Eine eigene Rolle, eigene Aufgaben, ein eigener Wettbewerb mit eigenem Hauptpreis.</p>
         </section>
 
         <section className="briefing-section">
