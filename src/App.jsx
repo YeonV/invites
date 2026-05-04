@@ -132,25 +132,25 @@ function AnalystBriefing({ onClose }) {
           <h2>Deine Rolle: Xeon Analyst</h2>
           <p>Analysten sind keine Zuschauer. Du hast eine eigene Rolle, eine eigene Wertung und einen eigenen Hauptpreis. Hier ist, was dich am Abend erwartet.</p>
           <div className="rule-list">
-            <div className="rule-card"><span className="rule-num">1</span><div><strong>Was zu gewinnen ist: Die Wildcard 2027</strong><br/>Der beste Xeon Analyst gewinnt die Wildcard für die nächste Edition. Das bedeutet: Du sitzt 2027 garantiert mit am Tisch – kein Los, kein Zufall.<br/><br/>Aber die Wildcard ist mehr als nur ein Platz. Sie ist das <strong>Privileg der freien Wahl</strong>. Du allein entscheidest, ob du 2027 als Spieler antrittst – oder als Analyst zurückkehrst, wenn dir die Rolle gefallen hat. Niemand sonst hat diese Wahl. Bei allen anderen entscheidet der Zufall. Bei dir entscheidest du.</div></div>
+            <div className="rule-card"><span className="rule-num">1</span><div><strong>Was zu gewinnen ist: Wildcard 2027</strong><br/>Der beste Xeon Analyst gewinnt die Wildcard für die nächste Edition. Das bedeutet: Du sitzt 2027 garantiert mit am Tisch – kein Los, kein Zufall.<br/><br/>Aber die Wildcard ist mehr als nur ein Platz. Sie ist das <strong>Privileg der freien Wahl</strong>. Du allein entscheidest, ob du 2027 als Spieler antrittst – oder als Analyst zurückkehrst, wenn dir die Rolle gefallen hat. Niemand sonst hat diese Wahl. Bei allen anderen entscheidet der Zufall. Bei dir entscheidest du.</div></div>
             <div className="rule-card"><span className="rule-num">2</span><div><strong>Das Tipp-Spiel</strong><br/>Vor jedem Spiel gibst du eine Prognose ab: Du bekommst Punkte für richtige Einschätzungen – über den gesamten Abend hinweg. Am Ende wird der beste Analyst gekürt. Er gewinnt die Wildcard.</div></div>
-            <div className="rule-card"><span className="rule-num">3</span><div><strong>Die Jury</strong><br/>Bei einem der Spiele werdet ihr zur Jury. Eure Bewertung ist verbindlich – sie geht direkt in die Spielerwertung ein. Kein Veto, keine Korrektur. Welches Spiel das ist, sagen wir am Abend.</div></div>
+            <div className="rule-card"><span className="rule-num">3</span><div><strong>Die Jury</strong><br/>Bei einem der Spiele werden Analysten zur Jury. Ihre Bewertung ist verbindlich – sie geht direkt in die Spielerwertung ein. Kein Veto, keine Korrektur. Welches Spiel das ist, sagen wir am Abend.</div></div>
             <div className="rule-card"><span className="rule-num">4</span><div><strong>Analyst Insight</strong><br/>Vor jedem Spiel hast du die Option, deinen Tipp, dein Bauchgefühl, deine These zu verkünden. Du musst nicht – aber wer etwas zu sagen hat, soll es sagen. Das hier ist auch deine Bühne.</div></div>
             <div className="rule-card"><span className="rule-num">5</span><div><strong>Xeon Moment of the Night</strong><br/>Halte die besten Momente des Abends mit der Handykamera fest – lustig, dramatisch, absurd. Du weißt, was gemeint ist. Am Ende des Abends wird das beste Foto gekürt: der Xeon Moment of the Night. Handy geladen mitbringen.</div></div>
           </div>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <h2>Das Analysten-Battle und der Lead Analyst</h2>
+          <h2>Analysten-Battle &amp; Lead Analyst</h2>
           <p>Bevor die Show startet, treten die Analysten in einem eigenen, kurzen Wettbewerb gegeneinander an: dem Analysten-Battle. Es entscheidet zwei Dinge.</p>
-          <p><strong>Erstens:</strong> Falls am Spieltag ein Platz frei wird, ist die Reihenfolge, wer ihn übernimmt, nicht zufällig. Sie wird im Battle gespielt.</p>
-          <p><strong>Zweitens:</strong> Den <strong>Lead Analyst</strong> des Abends. Wer das Battle gewinnt – sofern er nicht selbst auf einen Spielerplatz wechselt – ist Sprecher der Analysten. Bei Jury-Entscheidungen mit Patt-Stand entscheidet er.</p>
-          <p className="briefing-accent">Welches Spiel das Battle ist, erfährst du am Spieltag.</p>
+          <p><strong>Erstens:</strong> Falls am Spieltag ein Platz frei wird, ist die Reihenfolge, wer ihn übernimmt, nicht zufällig. Sie wird im Battle erspielt.</p>
+          <p><strong>Zweitens:</strong> Den <strong>Lead Analyst</strong> des Abends. Wer das Battle gewinnt – sofern er nicht selbst auf einen Spielerplatz wechselt – ist der Lead-Analyst. Bei Jury-Entscheidungen mit Patt-Stand entscheidet er.</p>
+          <p className="briefing-accent">Was das Battle ist, erfährst du am Spieltag.</p>
         </section>
 
         <section className="briefing-section">
           <h2>Wenn der Spielerplatz frei wird</h2>
-          <p>Falls ein Spieler kurzfristig absagt, am Spieltag verhindert ist – oder sich kurz vor Showbeginn doch nicht im Spielfeld sieht – übernimmt einer von euch den Platz. Die Reihenfolge dafür hat das Battle bestimmt.</p>
+          <p>Falls ein Spieler kurzfristig absagt, am Spieltag verhindert ist – oder sich kurz vor Showbeginn doch nicht im Spielfeld sieht – übernimmt einer der Analysten den Platz. Die Reihenfolge dafür hat das Battle bestimmt.</p>
           <p>Das ist nicht Plan B des Abends, sondern Teil des Plans A: Die Show funktioniert nur, wenn jemand mit voller Überzeugung einsteigt – ohne Anlauf, ohne Ausrede. Wer übernimmt, übernimmt mit allen Rechten und allen Chancen: Punkte ab dem ersten Spiel, Pokal in Reichweite, Hall of Fame in Reichweite.</p>
         </section>
 
@@ -163,7 +163,7 @@ function AnalystBriefing({ onClose }) {
           <h2>Ablauf des Abends</h2>
           <div className="timeline">
             <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen, Drinks, Essen</strong><span>Zeit zum Ankommen und Einstimmen</span></div>
-            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Das Analysten-Battle</strong><span>Kurzes Vorspiel unter euch – klärt Reihenfolge und Lead Analyst</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Analysten-Battle</strong><span>Reihenfolge und Lead Analyst</span></div>
             <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Game Show</strong><span>ca. 3 Stunden · 9 Spiele · eine Pause dazwischen</span></div>
             <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Siegerehrung</strong><span>Der Moment der Wahrheit – für Spieler und Analysten</span></div>
             <div className="timeline-item"><span className="timeline-dot" /><strong>Hausfest</strong><span>Feiern, Drinks, den Abend Revue passieren lassen</span></div>
