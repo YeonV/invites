@@ -118,25 +118,27 @@ function AnalystBriefing({ onClose }) {
         <section className="briefing-section">
           <h2>Was ist Xeon?</h2>
           <p>Xeon ist eine jährliche Game Show – ein Abend, an dem sich unsere Freundesgruppe in verschiedenen Disziplinen miteinander misst. Eine echte Show mit Buzzern, Bildschirm, Zeitdruck und einem finalen Gewinner. Dazu Essen, Getränke, Alkohol und ein Abend, an dem garantiert viel gelacht wird.</p>
-          <p>Wir machen das zum ersten Mal, und es soll eine jährliche Tradition werden. In der ersten Edition spielen 12–16 Spieler in 9 Spielen gegeneinander – einzeln und in wechselnden Teams. Am Ende gibt es einen Wanderpokal und eine Hall of Fame.</p>
+          <p>In der ersten Edition treten bis zu 16 <strong>Spieler</strong> in 9 Spielen gegeneinander an – einzeln und in wechselnden Teams. Daneben gibt es eine zweite, gleichwertige Rolle: <strong>Xeon Analyst</strong>. Eigene Wettbewerbe, eigene Preise, eigene Wege ins Spielerfeld.</p>
         </section>
 
         <section className="briefing-section briefing-section--highlight">
-          <h2>Ein Wort zur Spielerauswahl</h2>
-          <p>Kurz und ehrlich: Einige Spiele funktionieren nur mit einer festen Obergrenze von 16 Spielern. Buzzer-System, Teamgrößen, Materialmengen, Zeitplanung – alles ist auf diese Zahl ausgelegt. Mehr Spieler würden den Abend sprengen.</p>
-          <p>Weil wir aber mehr als 16 Leute sind, die wir dabeihaben wollen, mussten wir eine Auswahl treffen. Neben wenigen Stammspielern war diese Auswahl rein zufällig und wird es auch in zukünftigen Editionen sein. Es war keine Bewertung, wer es mehr verdient hat oder wer besser reinpasst.</p>
-          <p className="briefing-accent">Das heißt für dich: Du bist als Xeon Analyst dabei. Du hast eine eigene Rolle am Abend, du bist mitten im Geschehen – und falls ein Spieler kurzfristig absagt, rückst du direkt als vollwertiger Spieler nach.</p>
+          <h2>Zwei Rollen, ein Abend</h2>
+          <p>Xeon hat 16 Spielerplätze. Buzzer-System, Teamgrößen, Materialmengen, Zeitplanung – alles ist auf diese Zahl ausgelegt. Mehr würden den Abend sprengen.</p>
+          <p>Damit wir trotzdem alle dabeihaben, mit denen wir den Abend feiern wollen, hat die Show zwei Rollen, die nebeneinander laufen:</p>
+          <p><strong>Spieler</strong> kämpfen in den 9 Spielen um den Wanderpokal und die Hall of Fame.<br/><strong>Analysten</strong> haben ihre eigenen Wettbewerbe, ihre eigenen Preise – und mehrere Wege, im Laufe des Abends ins Spielerfeld zu wechseln.</p>
+          <p className="briefing-accent">Beide Rollen sind voll Teil des Abends. Die Aufteilung am Start ist nur das – ein Start. Sie kann sich im Laufe des Abends verschieben.</p>
         </section>
 
         <section className="briefing-section">
           <h2>Deine Rolle: Xeon Analyst</h2>
-          <p>Analysten sind keine Zuschauer. Du bist Teil des Abends – mit eigenen Aufgaben, eigenen Wettbewerben und Momenten, in denen du selbst mitmachst.</p>
+          <p>Analysten sind keine Zuschauer. Du hast eigene Aufgaben, eigene Wettbewerbe, eigene Preise – und wenn du willst, einen direkten Weg ins Hauptfeld.</p>
           <div className="rule-list">
-            <div className="rule-card"><span className="rule-num">1</span><div><strong>Das Tipp-Spiel</strong><br/>Vor jedem Spiel gibst du eine Prognose ab: Wer gewinnt? Welches Team wird Erster? Wie hoch, wie schnell, wie nah dran? Du bekommst Punkte für richtige Einschätzungen – über den gesamten Abend hinweg. Am Ende wird der beste Analyst gekürt.<br/><br/><strong>Der Preis:</strong> Der beste Xeon Analyst erhält eine Wildcard für die nächste Xeon-Edition – ein garantierter Spielerplatz 2027. Kein Los, kein Zufall. Du bist definitiv drin.</div></div>
+            <div className="rule-card"><span className="rule-num">1</span><div><strong>Das Tipp-Spiel</strong><br/>Vor jedem Spiel gibst du eine Prognose ab: Wer gewinnt? Welches Team wird Erster? Wie hoch, wie schnell, wie nah dran? Du bekommst Punkte für richtige Einschätzungen – über den gesamten Abend hinweg. Am Ende wird der beste Analyst gekürt.<br/><br/><strong>Der Preis:</strong> Eine Wildcard für Xeon 2027. Heißt konkret: Du wirst beim nächsten Randomizer für Nicht-Stammspieler ausgenommen. Dein Spielerplatz im nächsten Jahr steht – kein Los, kein Zufall.</div></div>
             <div className="rule-card"><span className="rule-num">2</span><div><strong>Die Jury</strong><br/>Bei mindestens einem Spiel werden die Analysten zur offiziellen Jury. Eure Bewertung entscheidet mit über das Ranking der Spieler. Mehr verraten wir nicht – aber es wird lustig.</div></div>
-            <div className="rule-card"><span className="rule-num">3</span><div><strong>Selbst mitspielen</strong><br/>Bei einigen Spielen könnt ihr als Analysten direkt mitmachen – nicht für das Hauptranking, aber in eurem eigenen Analysten-Wettbewerb. Welche Spiele das sind, erfahrt ihr am Abend.</div></div>
+            <div className="rule-card"><span className="rule-num">3</span><div><strong>Mitspielen</strong><br/>Bei einigen Spielen könnt ihr als Analysten direkt mitmachen – in eurem eigenen Analysten-Wettbewerb. Welche Spiele das sind, erfahrt ihr am Abend.</div></div>
             <div className="rule-card"><span className="rule-num">4</span><div><strong>Xeon Moment of the Night</strong><br/>Eure zweite Mission: Haltet die besten Momente des Abends mit der Handykamera fest – lustig, dramatisch, absurd. Ihr wisst, was gemeint ist. Am Ende des Abends wird das beste Foto gekürt. Handy geladen mitbringen.</div></div>
-            <div className="rule-card"><span className="rule-num">5</span><div><strong>Nachrücker</strong><br/>Falls ein Player zu dem Datum nicht kann oder kurzfristig absagt, rückst du als vollwertiger Player nach – mit allen Rechten, allen Punkten und der Chance auf den Pokal.</div></div>
+            <div className="rule-card"><span className="rule-num">5</span><div><strong>Die Analyst-Battle</strong><br/>Direkt zu Beginn des Abends gibt es die Analyst-Battle. Ausgewählte Analysten treten gegeneinander an – die Sieger werden zu vollwertigen Spielern befördert, mit allen Rechten, allen Punkten und der Chance auf den Pokal. Wer als Analyst startet, ist also nicht zwingend Analyst, wenn die Show losgeht.</div></div>
+            <div className="rule-card"><span className="rule-num">6</span><div><strong>Rollen-Wechsel</strong><br/>Spieler dürfen sich bei Lampenfieber, plötzlichem Unwohlsein oder einfach aus eigenem Wunsch in den Analysten-Modus zurückziehen – und geben damit ihren Spielerplatz frei. Dieser Platz wird dann mit einem Analysten besetzt: voller Spielerstatus, alle Rechte, alle Punkte. Die Plätze sind nicht in Stein gemeißelt.</div></div>
           </div>
         </section>
 
@@ -150,6 +152,7 @@ function AnalystBriefing({ onClose }) {
           <h2>Ablauf des Abends</h2>
           <div className="timeline">
             <div className="timeline-item"><span className="timeline-dot" /><strong>Ankommen</strong><span>Drinks, Essen, Zeit zum Einstimmen</span></div>
+            <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Analyst-Battle</strong><span>Eröffnungsmatch – die Sieger rücken ins Spielerfeld</span></div>
             <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Game Show</strong><span>ca. 2–2,5 Stunden · 9 Spiele · eine Pause · du bist als Analyst mit eigenen Aufgaben dabei</span></div>
             <div className="timeline-item"><span className="timeline-dot timeline-dot--accent" /><strong>Siegerehrung &amp; Analysten-Awards</strong><span>Der Moment der Wahrheit – für Spieler und Analysten</span></div>
             <div className="timeline-item"><span className="timeline-dot" /><strong>Hausfest</strong><span>Feiern, Drinks, den Abend Revue passieren lassen</span></div>
