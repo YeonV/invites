@@ -13,8 +13,12 @@ const PLAYER_ORDER = [
   'Andreas', 'Bastian', 'Blade', 'Fabio', 'Frank', 'Jan', 'Johanna',
   'Leon', 'Lorain', 'Pepe', 'Saida', 'Sinja', 'Susi', 'Tom',
   'Tristan', 'Xeon', 'Yannick', 'Zoe',
-  'Pablo', 'Berit'
+  'Pablo', 'Berit',
+  'Kumar', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max'
 ];
+const ANALYST_NAMES = new Set([
+  'Berit', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max'
+]);
 const players = PLAYER_ORDER.filter(name =>
   fs.existsSync(path.join(AVATAR_DIR, `${name}.png`))
 );
@@ -93,6 +97,31 @@ const encoders = [
   (name) => crypto.createHash('sha3-512').update(salt(name)).digest('hex'),
   // 20. SHA3-256 hex
   (name) => crypto.createHash('sha3-256').update(salt(name)).digest('hex'),
+  // 21. SHA-224 hex
+  (name) => crypto.createHash('sha224').update(salt(name)).digest('hex'),
+  // 22. HMAC-SHA1 hex
+  (name) => crypto.createHmac('sha1', 'xeon-extension').update(salt(name)).digest('hex'),
+  // 23. SHA-512 base64url (longer than #10, distinct algo)
+  (name) => crypto.createHash('sha512').update(salt(name)).digest('base64url'),
+  // 24. AES-192-CTR hex
+  (name) => {
+    const key = crypto.scryptSync('analyst-key', 'salt2', 24);
+    const iv = crypto.createHash('md5').update(`ctr-${name}`).digest();
+    const cipher = crypto.createCipheriv('aes-192-ctr', key, iv);
+    return Buffer.concat([cipher.update(salt(name)), cipher.final()]).toString('hex');
+  },
+  // 25. SHA3-384 hex
+  (name) => crypto.createHash('sha3-384').update(salt(name)).digest('hex'),
+  // 26. HMAC-SHA3-256 base64url
+  (name) => crypto.createHmac('sha3-256', 'xeon-2026-final').update(salt(name)).digest('base64url'),
+  // 27. PBKDF2 (sha256, 1000 iters, 32 bytes) hex
+  (name) => crypto.pbkdf2Sync(salt(name), 'xeon-pepper', 1000, 32, 'sha256').toString('hex'),
+  // 28. Quintuple SHA-512 chain
+  (name) => {
+    let h = salt(name);
+    for (let i = 0; i < 5; i++) h = crypto.createHash('sha512').update(h).digest('hex');
+    return h;
+  },
 ];
 
 // Clean data dir
@@ -103,10 +132,12 @@ for (const f of fs.readdirSync(DATA_DIR)) {
 
 const lookup = [];
 
-players.forEach((name, i) => {
+players.forEach((name) => {
+  const i = PLAYER_ORDER.indexOf(name);
   const code = encoders[i](name);
+  const role = ANALYST_NAMES.has(name) ? 'analyst' : 'player';
   const file = `${code}.json`;
-  fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify({ name }, null, 2));
+  fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify({ name, role }, null, 2));
 
   // Copy avatar with the same hashed name
   const avatarSrc = path.join(AVATAR_DIR, `${name}.png`);
@@ -114,7 +145,7 @@ players.forEach((name, i) => {
     fs.copyFileSync(avatarSrc, path.join(DATA_DIR, `${code}.png`));
   }
 
-  lookup.push({ name, code, style: encoders[i].name || `encoder_${i + 1}` });
+  lookup.push({ name, code, role, style: encoders[i].name || `encoder_${i + 1}` });
 });
 
 // Save lookup table locally only (gitignored)

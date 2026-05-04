@@ -6,7 +6,7 @@ const PASSWORD = 'Xeon2026'
 const WHATSAPP = import.meta.env.VITE_WHATSAPP_URL
 const BASE = import.meta.env.BASE_URL
 
-function Briefing({ onClose }) {
+function PlayerBriefing({ onClose }) {
   return (
     <div className="briefing-overlay">
       <div className="briefing-scroll">
@@ -104,6 +104,41 @@ function Briefing({ onClose }) {
   )
 }
 
+function AnalystBriefing({ onClose }) {
+  return (
+    <div className="briefing-overlay">
+      <div className="briefing-scroll">
+
+        <div className="briefing-header">
+          <div className="briefing-logo" style={{ backgroundImage: `url(${BASE}logo-full.svg)` }} />
+          <div className="briefing-subtitle">EDITION 2026</div>
+          <p className="briefing-tagline">Das offizielle Analysten-Briefing<br/>von Yeon und Leon</p>
+        </div>
+
+        <section className="briefing-section">
+          <h2>Platzhalter</h2>
+          <p>Hier kommt das Analysten-Briefing hin. Inhalt folgt.</p>
+        </section>
+
+        <section className="briefing-section briefing-section--final">
+          <div className="briefing-masters" aria-label="Game Masters">
+            <figure className="briefing-master">
+              <img src={`${BASE}Yeon.png`} alt="Game Master Yeon" className="briefing-master-img" />
+            </figure>
+            <figure className="briefing-master">
+              <img src={`${BASE}Leon.png`} alt="Game Master Leon" className="briefing-master-img" />
+            </figure>
+          </div>
+
+          <div className="briefing-footer"><p className="briefing-accent">Wir freuen uns auf euch!</p>Xeon – Edition 2026</div>
+        </section>
+
+      </div>
+      <button className="briefing-close" onClick={onClose}>Zurück</button>
+    </div>
+  )
+}
+
 export default function App() {
   useEffect(() => {
     window.scrollTo(0, 1)
@@ -181,7 +216,7 @@ export default function App() {
       {phase === 'revealed' && data && (
         <>
           {avatar && <img src={avatar} alt={data.name} className="invite-avatar invite-card--enter" />}
-          <h1 className="invite-name invite-card--enter">Player {data.name}</h1>
+          <h1 className="invite-name invite-card--enter">{data.role === 'analyst' ? 'Analyst' : 'Player'} {data.name}</h1>
           <div className="invite-card invite-card--enter">
             <p className="invite-text">You are invited!</p>
           </div>
@@ -197,7 +232,9 @@ export default function App() {
         </>
       )}
 
-      {showBriefing && <Briefing onClose={() => setShowBriefing(false)} />}
+      {showBriefing && (data?.role === 'analyst'
+        ? <AnalystBriefing onClose={() => setShowBriefing(false)} />
+        : <PlayerBriefing onClose={() => setShowBriefing(false)} />)}
     </div>
   )
 }
