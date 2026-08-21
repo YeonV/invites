@@ -10,6 +10,8 @@
     "generate-cards": "node generate-cards.cjs",
     "generate-cards2": "node generate-cards2.cjs",
     "generate-cards3": "node generate-cards3.cjs",
+    "generate-cards4": "node generate-cards4.cjs",
+    "generate-label": "node generate-label.cjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

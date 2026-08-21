@@ -22,10 +22,9 @@ git-crypt-key
 public/data/lookup.json
 public/data/*.json
 public/data/*.png
+public/data*/
 qrcodes/
-cards/
-cards2/
-cards3/
+cards*/
 
 # Editor directories and files
 .vscode/*

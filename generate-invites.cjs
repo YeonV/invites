@@ -16,11 +16,21 @@ const PLAYER_ORDER = [
   'Pablo', 'Berit',
   'Kumar', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max'
 ];
+// 'Jan' sits in the player block above but plays as an analyst; he keeps his
+// original index (and therefore his already-printed code) either way.
 const ANALYST_NAMES = new Set([
-  'Berit', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max'
+  'Berit', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max',
+  'Jan', 'Ricarda'
 ]);
+// Dropouts whose already-printed card was handed to somebody else. The slot keeps
+// its position and keeps deriving its code from the ORIGINAL name, so the QR on the
+// printed card stays byte-identical — only the invite it serves changes.
+// Never delete a replaced name from PLAYER_ORDER: its index is what pins the code.
+const REPLACEMENTS = { 'Xeon': 'Ricarda' };
+function displayName(name) { return REPLACEMENTS[name] || name; }
+
 const players = PLAYER_ORDER.filter(name =>
-  fs.existsSync(path.join(AVATAR_DIR, `${name}.png`))
+  fs.existsSync(path.join(AVATAR_DIR, `${displayName(name)}.png`))
 );
 
 // Map display names to the salt name used when their code was originally generated
@@ -122,30 +132,34 @@ const encoders = [
     for (let i = 0; i < 5; i++) h = crypto.createHash('sha512').update(h).digest('hex');
     return h;
   },
+  // 29. scrypt KDF (48 bytes) base64url — spare; next free slot for a new guest
+  (name) => crypto.scryptSync(salt(name), 'xeon-lastcall', 48).toString('base64url'),
 ];
 
 // Clean data dir
 fs.mkdirSync(DATA_DIR, { recursive: true });
 for (const f of fs.readdirSync(DATA_DIR)) {
-  if (f.endsWith('.json') && f !== 'lookup.json') fs.unlinkSync(path.join(DATA_DIR, f));
+  if (f === 'lookup.json') continue;
+  if (f.endsWith('.json') || f.endsWith('.png')) fs.unlinkSync(path.join(DATA_DIR, f));
 }
 
 const lookup = [];
 
 players.forEach((name) => {
   const i = PLAYER_ORDER.indexOf(name);
-  const code = encoders[i](name);
-  const role = ANALYST_NAMES.has(name) ? 'analyst' : 'player';
+  const code = encoders[i](name); // roster name, never the display name
+  const shown = displayName(name);
+  const role = ANALYST_NAMES.has(shown) ? 'analyst' : 'player';
   const file = `${code}.json`;
-  fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify({ name, role }, null, 2));
+  fs.writeFileSync(path.join(DATA_DIR, file), JSON.stringify({ name: shown, role }, null, 2));
 
   // Copy avatar with the same hashed name
-  const avatarSrc = path.join(AVATAR_DIR, `${name}.png`);
+  const avatarSrc = path.join(AVATAR_DIR, `${shown}.png`);
   if (fs.existsSync(avatarSrc)) {
     fs.copyFileSync(avatarSrc, path.join(DATA_DIR, `${code}.png`));
   }
 
-  lookup.push({ name, code, role, style: encoders[i].name || `encoder_${i + 1}` });
+  lookup.push({ name: shown, code, role, style: encoders[i].name || `encoder_${i + 1}` });
 });
 
 // Save lookup table locally only (gitignored)
