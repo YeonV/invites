@@ -20,13 +20,16 @@ const PLAYER_ORDER = [
 // original index (and therefore his already-printed code) either way.
 const ANALYST_NAMES = new Set([
   'Berit', 'Janina G', 'Rabea', 'Janina D', 'Melis', 'Alex', 'Fabian', 'Max',
-  'Jan', 'Ricarda'
+  'Jan', 'Ricarda', 'Phil'
 ]);
 // Dropouts whose already-printed card was handed to somebody else. The slot keeps
 // its position and keeps deriving its code from the ORIGINAL name, so the QR on the
 // printed card stays byte-identical — only the invite it serves changes.
 // Never delete a replaced name from PLAYER_ORDER: its index is what pins the code.
-const REPLACEMENTS = { 'Xeon': 'Ricarda' };
+const REPLACEMENTS = {
+  'Xeon': 'Ricarda',
+  'Berit': 'Phil',
+};
 function displayName(name) { return REPLACEMENTS[name] || name; }
 
 const players = PLAYER_ORDER.filter(name =>
